@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pali e Dispari</title>
 
+    <link rel="stylesheet" href="">
     <script src="js/function.js"></script>
 </head>
 <body>
     
+    <h1>PALINDROMI</h1>
+    <h4>Inserisci una parola e ti dirò se è palindroma</h4>
+
+    <form>
+        <input type="text" id="word" placeholder="Inserisci una parola" required>
+        <button type="submit">PALINDROMA?</button>
+    </form>
+
+    <p id="result-palindrome"></p>
+
+    <h1>PARI O DISPARI</h1>
+    <h4>Scegli pari o dispari e un numero da 1 a 5</h4>
+
+    <form>
+        <select name="even-odd" id="even-odd">
+            <option value="even">Pari</option>
+            <option value="Odd">Dispari</option>
+        </select>
+        <input type="number" id="number">
+        <button type="submit">GIOCA!</button>
+    </form>
+
+
+
     <script src="js/script.js"></script>
 </body>
 </html>
