@@ -7,7 +7,7 @@ La confronto con la parola originariamente inserita
 Se si equivalgono allora sono palindrome
 */
 
-/*let message = 'La parola inserita NON è palindroma';
+let message = 'La parola inserita NON è palindroma';
 
 //Acquisisco la parola
 const word = prompt('Inserire un parola: ').trim();
@@ -19,18 +19,24 @@ console.log(message);
 
 //PARI O DISPARI
 
-/*
-Pari e Dispari
-L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-Generiamo un numero random(sempre da 1 a 5) per il computer(usando una funzione).
-Sommiamo i due numeri
-Stabiliamo se la somma dei due numeri è pari o dispari(usando una funzione)
-Dichiariamo chi ha vinto.
-*/
+//Resetto la variabile message
+message = 'Hai perso'
 
-
+//Dichiaro le variabili e acqusisco le informazioni dell'utente
 const max = 5;
-const userNumber = prompt('Inserire un numero da 1 a 5: ');
+const choice = prompt('Pari o dispari?').trim();
+const userNumber = parseInt(prompt('Inserire un numero da 1 a 5: '));
+
+//Genero un numero casuale da 1 a 5 utilizzando una funzione
 const computerNumber = randomNumber(1,5);
 
-console.log(computerNumber);
+const sum = userNumber + computerNumber;
+
+
+//Verifico se la somma dei due numeri è pari o dispari, e se l'utente ha vinto o perso in base alla sua scelta
+if((isOdd(sum) && choice.toLowerCase() == 'dispari') || (!isOdd(sum) && choice.toLowerCase() == 'pari')) message = 'Hai vinto';
+
+console.log(message);
+
+
+
