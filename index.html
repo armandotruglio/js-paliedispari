@@ -13,7 +13,7 @@
     <h1>PALINDROMI</h1>
     <h4>Inserisci una parola e ti dirò se è palindroma</h4>
 
-    <form>
+    <form id="palindrome-form">
         <input type="text" id="word" placeholder="Inserisci una parola" required>
         <button type="submit">PALINDROMA?</button>
     </form>
@@ -23,14 +23,18 @@
     <h1>PARI O DISPARI</h1>
     <h4>Scegli pari o dispari e un numero da 1 a 5</h4>
 
-    <form>
-        <select name="even-odd" id="even-odd">
+    <form id="even-odd-form">
+        <select name="choice" id="even-odd">
             <option value="even">Pari</option>
-            <option value="Odd">Dispari</option>
+            <option value="odd">Dispari</option>
         </select>
         <input type="number" id="number">
         <button type="submit">GIOCA!</button>
     </form>
+
+    <p id="computer-number"></p>
+
+    <p id="result-even-odd"></p>
 
 
 

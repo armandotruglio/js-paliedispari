@@ -8,7 +8,7 @@ Se si equivalgono allora sono palindrome
 */
 
 //Acquisisco gli elementi del DOM
-const form = document.querySelector('form');
+const form = document.getElementById('palindrome-form');
 const resultWord = document.getElementById('word');
 const reusltMessage = document.getElementById('result-palindrome');
 
@@ -27,24 +27,32 @@ form.addEventListener('submit', function (event) {
 
 //PARI O DISPARI
 
-//Resetto la variabile message
-message = 'Hai perso'
-
-//Dichiaro le variabili e acqusisco le informazioni dell'utente
+//Dichiaro le variabili e acqusisco le informazioni dal DOM
 const max = 5;
-const choice = prompt('Pari o dispari?').trim();
-const userNumber = parseInt(prompt('Inserire un numero da 1 a 5: '));
+const formEvenOdd = document.getElementById('even-odd-form')
+const resultUserChoice = document.getElementById('even-odd');
+const resultUserNumber = document.getElementById('number');
+const resulComputerNumber = document.getElementById('computer-number');
+const resultElement = document.getElementById('result-even-odd');
 
 //Genero un numero casuale da 1 a 5 utilizzando una funzione
-const computerNumber = randomNumber(1, 5);
+formEvenOdd.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-const sum = userNumber + computerNumber;
+    let message = 'Hai perso'
 
+    const choice = resultUserChoice.value;
+    const userNumber = resultUserNumber.value;
 
-//Verifico se la somma dei due numeri è pari o dispari, e se l'utente ha vinto o perso in base alla sua scelta
-if ((isOdd(sum) && choice.toLowerCase() == 'dispari') || (!isOdd(sum) && choice.toLowerCase() == 'pari')) message = 'Hai vinto';
+    const computerNumber = randomNumber(1, 5);
+    resulComputerNumber.innerText = 'Il numero del tuo avversario è ' + computerNumber;
 
-console.log(message);
+    const sum = userNumber + computerNumber;
 
+    //Verifico se la somma dei due numeri è pari o dispari, e se l'utente ha vinto o perso in base alla sua scelta
+    if ((isOdd(sum) && choice.toLowerCase() == 'odd') || (!isOdd(sum) && choice.toLowerCase() == 'even')) message = 'Hai vinto';
 
+   resultElement.innerText = message
+
+})
 
